@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Media Collection View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="MediaCollectionViewController" customModule="ivi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7qs-jp-K6a">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vk2-fY-kMZ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xai-rx-jpv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDu-Uu-FN2" customClass="PrimaryButton" customModule="ivi" customModuleProvider="target">
+                                        <rect key="frame" x="340" y="12" width="50" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Add"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-oz-5tk" customClass="CancelButton" customModule="ivi" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="12" width="60.5" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fDu-Uu-FN2" secondAttribute="trailing" constant="24" id="3Qd-Ql-fDb"/>
+                                    <constraint firstAttribute="height" constant="64" id="Fg8-Zj-p6O"/>
+                                    <constraint firstItem="fDu-Uu-FN2" firstAttribute="top" secondItem="Xai-rx-jpv" secondAttribute="top" constant="12" id="KsT-z1-8jw"/>
+                                    <constraint firstAttribute="bottom" secondItem="dLA-oz-5tk" secondAttribute="bottom" constant="12" id="OXD-Ed-X72"/>
+                                    <constraint firstItem="dLA-oz-5tk" firstAttribute="leading" secondItem="Xai-rx-jpv" secondAttribute="leading" constant="16" id="bj3-a3-nop"/>
+                                    <constraint firstAttribute="bottom" secondItem="fDu-Uu-FN2" secondAttribute="bottom" constant="12" id="dQ6-b0-3go"/>
+                                    <constraint firstItem="dLA-oz-5tk" firstAttribute="top" secondItem="Xai-rx-jpv" secondAttribute="top" constant="12" id="jRR-6H-rpz"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joq-56-Sqz">
+                                <rect key="frame" x="358" y="806" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8jq-ua-Y2B"/>
+                                    <constraint firstAttribute="width" secondItem="joq-56-Sqz" secondAttribute="height" multiplier="1:1" id="IbX-qu-5U6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="gearshape.fill" catalog="system" title=""/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="joq-56-Sqz" secondAttribute="bottom" constant="16" id="5xC-mc-Jmm"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xai-rx-jpv" secondAttribute="trailing" id="Mhw-ms-isf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="joq-56-Sqz" secondAttribute="trailing" constant="16" id="RCM-wF-70b"/>
+                            <constraint firstItem="Xai-rx-jpv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="XLQ-9o-ubM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7qs-jp-K6a" secondAttribute="bottom" id="aw2-zV-JQe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7qs-jp-K6a" secondAttribute="trailing" id="g9O-qp-qUw"/>
+                            <constraint firstItem="7qs-jp-K6a" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="iPm-dl-o6K"/>
+                            <constraint firstItem="Xai-rx-jpv" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="jHh-3v-vyi"/>
+                            <constraint firstItem="7qs-jp-K6a" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="lpn-fo-dn8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="fDu-Uu-FN2" id="AY8-SA-1Uq"/>
+                        <outlet property="cancelButton" destination="dLA-oz-5tk" id="AO8-j9-1nt"/>
+                        <outlet property="collectionView" destination="7qs-jp-K6a" id="bOA-gX-Udb"/>
+                        <outlet property="settingsButton" destination="joq-56-Sqz" id="mVE-ej-qKn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="45.535714285714285"/>
+        </scene>
+        <!--Media View Controller-->
+        <scene sceneID="5a7-Hf-1uM">
+            <objects>
+                <viewController storyboardIdentifier="MediaViewController" id="npL-bG-MOm" customClass="MediaViewController" customModule="ivi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f5B-DX-Ukg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrT-JY-u9k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="erz-FN-eiy">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="erz-FN-eiy" firstAttribute="width" secondItem="rrT-JY-u9k" secondAttribute="width" id="EP5-A9-K8a"/>
+                                    <constraint firstItem="erz-FN-eiy" firstAttribute="top" secondItem="rrT-JY-u9k" secondAttribute="top" id="Hjq-Q0-Qqk"/>
+                                    <constraint firstItem="erz-FN-eiy" firstAttribute="leading" secondItem="rrT-JY-u9k" secondAttribute="leading" id="fvy-8y-lFe"/>
+                                    <constraint firstAttribute="trailing" secondItem="erz-FN-eiy" secondAttribute="trailing" id="new-rG-O08"/>
+                                    <constraint firstItem="erz-FN-eiy" firstAttribute="height" secondItem="rrT-JY-u9k" secondAttribute="height" id="r5s-xx-3gs"/>
+                                    <constraint firstAttribute="bottom" secondItem="erz-FN-eiy" secondAttribute="bottom" id="zrv-U5-tJu"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rMN-oL-h2G">
+                                <rect key="frame" x="16" y="806" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rMN-oL-h2G" secondAttribute="height" multiplier="1:1" id="max-pL-UFw"/>
+                                    <constraint firstAttribute="height" constant="40" id="u4p-GA-SxM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cSC-2d-ffQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rrT-JY-u9k" firstAttribute="leading" secondItem="cSC-2d-ffQ" secondAttribute="leading" id="2IW-cD-HaO"/>
+                            <constraint firstItem="cSC-2d-ffQ" firstAttribute="bottom" secondItem="rMN-oL-h2G" secondAttribute="bottom" constant="16" id="XBT-lR-C0l"/>
+                            <constraint firstItem="cSC-2d-ffQ" firstAttribute="trailing" secondItem="rrT-JY-u9k" secondAttribute="trailing" id="bT8-AD-w5T"/>
+                            <constraint firstItem="rrT-JY-u9k" firstAttribute="top" secondItem="cSC-2d-ffQ" secondAttribute="top" id="fKF-EB-ybz"/>
+                            <constraint firstItem="rMN-oL-h2G" firstAttribute="leading" secondItem="cSC-2d-ffQ" secondAttribute="leading" constant="16" id="iib-1S-KDH"/>
+                            <constraint firstItem="cSC-2d-ffQ" firstAttribute="bottom" secondItem="rrT-JY-u9k" secondAttribute="bottom" id="uPe-He-kgL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blurButton" destination="rMN-oL-h2G" id="53k-kw-7Hj"/>
+                        <outlet property="imageView" destination="erz-FN-eiy" id="Kbc-FU-6fA"/>
+                        <outlet property="scrollView" destination="rrT-JY-u9k" id="ZJn-dv-iJu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5b-X2-yU9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="46"/>
+        </scene>
+        <!--Media Page View Controller-->
+        <scene sceneID="i32-Hd-Kay">
+            <objects>
+                <pageViewController storyboardIdentifier="MediaPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="VZo-fY-1AA" customClass="MediaPageViewController" customModule="ivi" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAs-Ef-rqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="46"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="dLA-oz-5tk">
+            <size key="intrinsicContentSize" width="60.5" height="31"/>
+        </designable>
+        <designable name="fDu-Uu-FN2">
+            <size key="intrinsicContentSize" width="50" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="History" representedClassName="History" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <attribute name="severity" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Media" representedClassName="Media" syncable="YES">
+        <attribute name="blur" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String"/>
+        <attribute name="isVideo" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="thumbnailFilename" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="pin" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Media" positionX="-99.81439208984375" positionY="-134.3049011230469" width="128" height="89"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="History" positionX="-81" positionY="-63" width="128" height="89"/>
+    </elements>
+</model>
