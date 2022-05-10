@@ -9,15 +9,17 @@ import UIKit
 
 class OnboardingPageViewController: UIPageViewController {
     
-    private enum ViewControllers: CaseIterable {
+    enum ViewControllers: CaseIterable {
         case Welcome
-        case Introduction
+        case IntroductionPrivacy
+        case IntroductionSettings
         case SetupPassword
         
         var viewController: UIViewController? {
             switch self {
             case .Welcome: return WelcomeViewController.viewController
-            case .Introduction: return IntroductionViewController.viewController
+            case .IntroductionPrivacy: return IntroductionPrivacyViewController.viewController
+            case .IntroductionSettings: return IntroductionSettingsViewController.viewController
             case .SetupPassword: return SetupPasswordViewController.viewController
             }
         }
@@ -43,7 +45,7 @@ class OnboardingPageViewController: UIPageViewController {
 //MARK: Initialization
 extension OnboardingPageViewController {
     func initialize() {
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .black
         _viewControllers = []
         
         for viewControllerCase in ViewControllers.allCases {

@@ -52,6 +52,8 @@
 		46199D9D281048A4005D64CF /* Media+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46199D9B281048A4005D64CF /* Media+CoreDataProperties.swift */; };
 		46199DA0281156F2005D64CF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46199D9F281156F2005D64CF /* Settings.storyboard */; };
 		46199DA528129C86005D64CF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46199DA428129C86005D64CF /* SettingsViewController.swift */; };
+		46574634282A1CED008D8BC1 /* IntroductionSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46574633282A1CED008D8BC1 /* IntroductionSettingsViewController.swift */; };
+		465E6DA0282A2771003CF6E5 /* SoftButtonReversed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465E6D9F282A2771003CF6E5 /* SoftButtonReversed.swift */; };
 		46E547312817B4F400AEF04B /* champagne@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46E547162817B4F100AEF04B /* champagne@3x.png */; };
 		46E547322817B4F400AEF04B /* rook@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46E547172817B4F100AEF04B /* rook@3x.png */; };
 		46E547332817B4F400AEF04B /* camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46E547182817B4F100AEF04B /* camera@3x.png */; };
@@ -158,6 +160,8 @@
 		46199D9B281048A4005D64CF /* Media+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Media+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		46199D9F281156F2005D64CF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		46199DA428129C86005D64CF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		46574633282A1CED008D8BC1 /* IntroductionSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionSettingsViewController.swift; sourceTree = "<group>"; };
+		465E6D9F282A2771003CF6E5 /* SoftButtonReversed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftButtonReversed.swift; sourceTree = "<group>"; };
 		46E547162817B4F100AEF04B /* champagne@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "champagne@3x.png"; sourceTree = "<group>"; };
 		46E547172817B4F100AEF04B /* rook@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rook@3x.png"; sourceTree = "<group>"; };
 		46E547182817B4F100AEF04B /* camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@3x.png"; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 			children = (
 				46199D3428053FDC005D64CF /* WelcomeViewController.swift */,
 				46199D3628054002005D64CF /* IntroductionViewController.swift */,
+				46574633282A1CED008D8BC1 /* IntroductionSettingsViewController.swift */,
 				46199D382805416A005D64CF /* SetupPasswordViewController.swift */,
 				46199D67280E51E8005D64CF /* ConfirmPasswordViewController.swift */,
 			);
@@ -410,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				46199D6F280E86AA005D64CF /* SoftButton.swift */,
+				465E6D9F282A2771003CF6E5 /* SoftButtonReversed.swift */,
 			);
 			path = SoftButton;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				46199D3728054002005D64CF /* IntroductionViewController.swift in Sources */,
 				46199D4928081817005D64CF /* UIAlertController + Utilities.swift in Sources */,
 				46199D392805416A005D64CF /* SetupPasswordViewController.swift in Sources */,
+				465E6DA0282A2771003CF6E5 /* SoftButtonReversed.swift in Sources */,
 				46199D472807EE7F005D64CF /* UIColor + Utilities.swift in Sources */,
 				46FAA64A2815444200FE9763 /* History+CoreDataProperties.swift in Sources */,
 				46199D3028053199005D64CF /* StoryboardConstants.swift in Sources */,
@@ -784,6 +791,7 @@
 				46199D91280FE716005D64CF /* NotificationConstants.swift in Sources */,
 				46E5476F2817BB5300AEF04B /* SelectLogoViewController.swift in Sources */,
 				46199D9D281048A4005D64CF /* Media+CoreDataProperties.swift in Sources */,
+				46574634282A1CED008D8BC1 /* IntroductionSettingsViewController.swift in Sources */,
 				46FAA64E28154C9500FE9763 /* HistoryViewController.swift in Sources */,
 				46199D3B28054A28005D64CF /* OnboardingViewController.swift in Sources */,
 				46199D9C281048A4005D64CF /* Media+CoreDataClass.swift in Sources */,
@@ -970,10 +978,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = EUM5NDB3H2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ivi/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "ivi will use Face ID as a secondary point of identification. It will be used after you have correctly inputed the swipe code.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -984,7 +993,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = samuelwong.ivi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelwong.ivi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -998,10 +1007,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = EUM5NDB3H2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ivi/Info.plist;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "ivi will use Face ID as a secondary point of identification. It will be used after you have correctly inputed the swipe code.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Login;
@@ -1012,7 +1022,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = samuelwong.ivi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samuelwong.ivi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

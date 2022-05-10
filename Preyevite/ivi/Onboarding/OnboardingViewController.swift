@@ -27,6 +27,7 @@ class OnboardingViewController: UIViewController {
 //MARK: Initialization
 extension OnboardingViewController {
     func initialize() {
+        self.view.backgroundColor = .black
         nextButton.addTarget(self, action: #selector(nextButton_didPress), for: .touchUpInside)
     }
     
@@ -44,7 +45,7 @@ extension OnboardingViewController {
 //MARK: Button Handlers
 @objc extension OnboardingViewController {
     func nextButton_didPress() {
-        if pageViewController?.index == 2 {
+        if pageViewController?.index == OnboardingPageViewController.ViewControllers.allCases.count - 1 {
             if let setupVC = pageViewController?.viewControllers?.last as? SetupPasswordViewController {
                 if setupVC.password.count > 0 {
                     if let vc = ConfirmPasswordViewController.viewController {
@@ -57,7 +58,7 @@ extension OnboardingViewController {
             }
         } else {
             pageViewController?.index += 1
-            if pageViewController?.index == 2 {
+            if pageViewController?.index == OnboardingPageViewController.ViewControllers.allCases.count - 1 {
                 nextButton.setTitle("Finish", for: .normal)
             }
         }

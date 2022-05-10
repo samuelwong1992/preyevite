@@ -13,9 +13,11 @@ class SetupPasswordViewController: UIViewController {
         return StoryboardConstants.Storyboards.Onboarding.storyboard.instantiateViewController(withIdentifier: StoryboardConstants.ViewControllers.SetupPasswordViewController.identifier) as? SetupPasswordViewController
     }
     
-    @IBOutlet var passwordTraceView: PasswordTraceView!
-    @IBOutlet var passwordLabel: UILabel!
-    @IBOutlet var clearButton: UIButton!
+    @IBOutlet weak var passwordTraceView: PasswordTraceView!
+    @IBOutlet weak var passwordDescriptionLabel: UILabel!
+    @IBOutlet weak var passwordTitleLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var clearButton: UIButton!
     
     var password: [StrokeDirection] = [] {
         didSet {
@@ -40,8 +42,15 @@ class SetupPasswordViewController: UIViewController {
 //MARK: Initialization
 extension SetupPasswordViewController {
     func initialize() {
+        self.view.backgroundColor = Theme.Colours.Black.uiColor
+        
         passwordTraceView._delegate = self
         passwordTraceView._dataSource = self
+        passwordTraceView.addBorder(withColor: Theme.Colours.White.uiColor.cgColor)
+        
+        passwordDescriptionLabel.textColor = Theme.Colours.White.uiColor
+        passwordTitleLabel.textColor = Theme.Colours.White.uiColor
+        passwordLabel.textColor = Theme.Colours.White.uiColor
         
         clearButton.addTarget(self, action: #selector(clearButton_didPress), for: .touchUpInside)
     }

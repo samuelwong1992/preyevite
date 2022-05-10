@@ -20,7 +20,8 @@ struct StoryboardConstants {
     
     enum ViewControllers: String {
         case WelcomeViewController = "WelcomeViewController"
-        case IntroductionViewController = "IntroductionViewController"
+        case IntroductionPrivacyViewController = "IntroductionPrivacyViewController"
+        case IntroductionSettingsViewController = "IntroductionSettingsViewController"
         case SetupPasswordViewController = "SetupPasswordViewController"
         case ConfirmPasswordViewController = "ConfirmPasswordViewController"
         case MediaViewController = "MediaViewController"

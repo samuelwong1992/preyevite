@@ -12,9 +12,13 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     var photo: Media! {
         didSet {
+            activityIndicator.startAnimating()
+            activityIndicator.isHidden = false
             photo.thumbnail { image in
                 DispatchQueue.main.async {
                     self.imageView.image = image
+                    self.activityIndicator.isHidden = true
+                    self.activityIndicator.stopAnimating()
                 }
             }
             isVideoImageView.isHidden = !photo.isVideo
@@ -25,6 +29,8 @@ class ImageCollectionViewCell: UICollectionViewCell {
     var imageView: UIImageView!
     var isVideoImageView: UIImageView!
     var blurredEffectView: UIVisualEffectView!
+    var activityIndicator: UIActivityIndicatorView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,6 +49,12 @@ class ImageCollectionViewCell: UICollectionViewCell {
         
         initialize()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        self.imageView.image = nil
+    }
 }
 
 //MARK: Initialization
@@ -51,7 +63,6 @@ extension ImageCollectionViewCell {
         imageView = UIImageView(frame: self.frame)
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
-        backgroundColor = .red
         self.addSubViewWithSameSize(subview: imageView)
         
         isVideoImageView = UIImageView(frame: self.frame)
@@ -62,5 +73,9 @@ extension ImageCollectionViewCell {
         let blurEffect = UIBlurEffect(style: .light)
         blurredEffectView = UIVisualEffectView(effect: blurEffect)
         addSubViewWithSameSize(subview: blurredEffectView)
+        
+        activityIndicator = UIActivityIndicatorView(frame: self.imageView.bounds)
+        activityIndicator.color = .black
+        imageView.addSubViewWithSameSize(subview: activityIndicator)
     }
 }

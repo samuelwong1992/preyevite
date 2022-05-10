@@ -21,7 +21,9 @@ class WelcomeViewController: UIViewController {
     @IBOutlet var leftTextWidthLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var middleTextWidthLayoutConstraint: NSLayoutConstraint!
     @IBOutlet var rightTextWidthLayoutConstraint: NSLayoutConstraint!
-
+    
+    @IBOutlet weak var subtitleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,13 +34,17 @@ class WelcomeViewController: UIViewController {
         super.viewDidAppear(animated)
         
         Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { timer in
-            UIView.animate(withDuration: 3.0, delay: 0.0) {
+            UIView.animate(withDuration: 3.0, delay: 0.0, options: .curveEaseInOut) {
                 self.imageViewWidthLayoutConstraint.constant = 120
                 
                 self.leftTextLabel.alpha = 0
                 self.rightTextLabel.alpha = 0
                 
                 self.view.layoutIfNeeded()
+            } completion: { finished in
+                UIView.animate(withDuration: 0.4, delay: 0.0, options: .curveEaseInOut) {
+                    self.subtitleLabel.alpha = 1
+                }
             }
         }
     }
@@ -47,9 +53,6 @@ class WelcomeViewController: UIViewController {
 //MARK: Initialization
 extension WelcomeViewController {
     func initialize() {
-//        leftTextLabel.adjustsFontSizeToFitWidth = true
-//        middleTextLabel.adjustsFontSizeToFitWidth = true
-//        middleTextLabel.backgroundColor = .red
-//        rightTextLabel.adjustsFontSizeToFitWidth = true
+        self.subtitleLabel.alpha = 0
     }
 }

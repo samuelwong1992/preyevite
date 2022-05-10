@@ -8,7 +8,8 @@
 import UIKit
 import AVKit
 
-private var imageCache: [String: UIImage] = [:]
+//private var imageCache: [String: UIImage] = [:]
+private var imageCache: NSCache = NSCache<NSString, UIImage>()
 
 class MediaHelpers {
     static func createMedia(fromImage image: UIImage) -> (media: Media?, error: Error?) {
@@ -80,22 +81,26 @@ class MediaHelpers {
 
 extension Media {
     func image(completion: @escaping ((UIImage?) -> Void)) {
-        guard let filename = self.filename else { return completion(nil) }
-        guard let thumbnail = self.thumbnailFilename else { return completion(nil) }
-        guard imageCache[filename] == nil else { return completion(imageCache[filename]) }
+        guard let filename = self.filename as? NSString else { return completion(nil) }
+        guard let thumbnail = self.thumbnailFilename as? NSString else { return completion(nil) }
+        guard imageCache.object(forKey: filename) == nil else { return completion(imageCache.object(forKey: filename)) }
         
         let serialQueue = DispatchQueue(label: "image_fetcher")
         serialQueue.async {
             if self.isVideo {
-                let image = MediaFileManager.loadImage(fileName: thumbnail)
+                let image = MediaFileManager.loadImage(fileName: String(thumbnail))
                 DispatchQueue.main.async {
-                    imageCache[filename] = image
+                    if let image = image {
+                        imageCache.setObject(image, forKey: filename)
+                    }
                     return completion(image)
                 }
             } else {
-                let image = MediaFileManager.loadImage(fileName: filename)
+                let image = MediaFileManager.loadImage(fileName: String(filename))
                 DispatchQueue.main.async {
-                    imageCache[filename] = image
+                    if let image = image {
+                        imageCache.setObject(image, forKey: filename)
+                    }
                     return completion(image)
                 }
             }
@@ -103,14 +108,17 @@ extension Media {
     }
     
     func thumbnail(completion: @escaping ((UIImage?) -> Void)) {
-        guard let filename = self.thumbnailFilename else { return completion(nil) }
-        guard imageCache[filename] == nil else { return completion(imageCache[filename]) }
+        guard let thumbnail = self.thumbnailFilename as? NSString else { return completion(nil) }
+        guard imageCache.object(forKey: thumbnail) == nil else { return completion(imageCache.object(forKey: thumbnail)) }
+        
         
         let serialQueue = DispatchQueue(label: "image_fetcher")
         serialQueue.async {
-            let image = MediaFileManager.loadImage(fileName: filename)
+            let image = MediaFileManager.loadImage(fileName: String(thumbnail))
             DispatchQueue.main.async {
-                imageCache[filename] = image
+                if let image = image {
+                    imageCache.setObject(image, forKey: thumbnail)
+                }
                 return completion(image)
             }
         }
